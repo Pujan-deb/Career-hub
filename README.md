@@ -1,4 +1,7 @@
 # React + Vite
+## Career-hub
+
+<h3>This is a simple project using react router. Where you can apply for jobs.</h3>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
