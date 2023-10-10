@@ -31,7 +31,10 @@ export default function AppliedJobs() {
         removeFromDb(id)
 
     }
-
+    let message;
+    if (Olddata.length === 0) {
+        message = "Nothing added."
+    }
     return (
         <div>
             <div className="p-12">
@@ -40,9 +43,24 @@ export default function AppliedJobs() {
 
             </div>
             <div>
-                {Olddata.map(item => <Displayjobs key={item.id} jobs={item}>
-                    <button className="w-[134px] p-3 font-medium text-white bg-[#CD5C5C] rounded-md mt-3 ml-4" onClick={() => removeJob(item.id)}>Remove</button>
-                </Displayjobs>)}
+                {/* {
+                    <p>{Olddata.length === 0 ? "Empty" : "Found"}</p>
+                }
+                {
+                }
+                {
+                    
+                    Olddata.map(item => <Displayjobs key={item.id} jobs={item}>
+                        <button className="w-[134px] p-3 font-medium text-white bg-[#CD5C5C] rounded-md mt-3 ml-4" onClick={() => removeJob(item.id)}>Remove</button>
+                    </Displayjobs>) || <p>{message}</p>} */}
+                <div>
+                    {
+                        Olddata.length === 0 ? <p className="text-3xl font-semibold text-center">Empty! No job has added.Please apply.</p> : Olddata.map(item => <Displayjobs key={item.id} jobs={item}>
+                            <button className="w-[134px] p-3 font-medium text-white bg-[#CD5C5C] rounded-md mt-3 ml-4" onClick={() => removeJob(item.id)}>Remove</button>
+                        </Displayjobs>)
+                    }
+                </div>
+
             </div>
         </div>
     )
